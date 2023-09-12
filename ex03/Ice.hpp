@@ -12,6 +12,7 @@ class Ice : public AMateria
         std::string type;
     public:
         Ice();
+        ~Ice();
         Ice(const Ice &a);
         Ice &operator=(Ice const &a);
         Ice* clone() const;

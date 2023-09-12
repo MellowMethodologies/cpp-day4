@@ -6,9 +6,7 @@ Cure::Cure(Cure const &A)
 }
 
 Cure::Cure():type("cure")
-{
-
-}
+{}
 
 Cure& Cure ::operator=(Cure const &a)
 {
@@ -17,3 +15,8 @@ Cure& Cure ::operator=(Cure const &a)
 }
 
 Cure* Cure:: clone() const {return (new Cure());}
+
+void Cure::use(ICharacter &target)
+{
+    std::cout << " * heals " << target.getName() <<"\`s wounds *" << std::endl;
+}

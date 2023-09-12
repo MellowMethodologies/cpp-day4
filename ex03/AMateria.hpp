@@ -8,14 +8,16 @@ class AMateria
 {
     protected:
         std::string type;
-    /*/*/
     public:
+    /*/*/
     AMateria();
+    ~AMateria();
     AMateria(std::string const & type);
     AMateria (AMateria const &a);
     AMateria &operator=(AMateria const &a);
     /*/*/
-    std::string const & getType() const; //Returns the materia type
+    
+    std::string const &getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
 };
