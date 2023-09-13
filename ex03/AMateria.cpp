@@ -13,7 +13,12 @@ AMateria::AMateria(std::string const & type):type(type){}
 /*recheck this (should we copy the type here or not?)*/
 AMateria& AMateria ::operator=(AMateria const &a)
 {
+    this->type = a.type;
     return *this;
 }
 /* ^ -- Orthodox Canonical form -- ^  */
 
+void AMateria::use(ICharacter &target)
+{
+    std::cout << "AMateria " << this->type << " used on " << target.getName() << std::endl;
+}

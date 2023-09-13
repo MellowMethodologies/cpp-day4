@@ -10,8 +10,9 @@ class Character:  public ICharacter
         std::string name;
         AMateria *T[4];
     public:
-        Character const &operator=(Character &t);
+        Character &operator=(Character const &t);
         Character ();
+        Character (std::string _name);
         Character(Character const &t);
         ~Character ();
         std::string const & getName() const;

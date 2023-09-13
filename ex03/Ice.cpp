@@ -5,7 +5,7 @@ Ice::Ice(Ice const &A)
     *this = A;
 }
 
-Ice::Ice():type("ice")
+Ice::Ice(): AMateria("ice")
 {
 }
 
