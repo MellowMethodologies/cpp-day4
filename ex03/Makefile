@@ -6,7 +6,7 @@ C = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Animal
+NAME = Materia
 
 all: $(NAME)
 

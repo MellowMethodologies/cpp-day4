@@ -3,9 +3,16 @@
 #include "Cure.hpp"
 #include "Character.hpp"
 
+void f()
+{
+    system("leaks Materia");
+}
+
 int main()
 {
+    atexit(f);
     IMateriaSource* src = new MateriaSource();
+    IMateriaSource tmp1 = MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
