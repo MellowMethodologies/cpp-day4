@@ -7,7 +7,11 @@ int main()
     {
         Cat basic;
         {
-        Cat tmp = basic;
+        std::cout<<std::endl;
+        Cat tmp;
+        std::cout<<std::endl;
+        tmp = basic;
+        std::cout<<std::endl;
         }
     }
 

@@ -22,6 +22,12 @@ Dog &Dog::operator=(const Dog &a)
 Dog::Dog(const Dog &a)
 {
     std::cout << "(Dog)" << "copy constructor"<< std::endl;
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     *this = a;
 }
 
@@ -31,7 +37,7 @@ Dog::~Dog()
     std::cout << "(Dog)" << "destructor"<< std::endl;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout<< "Bark\n";
 }

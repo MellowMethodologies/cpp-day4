@@ -33,7 +33,7 @@ Animal::~Animal()
     std::cout << "(Animal)" << "destructor"<< std::endl;
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout<< "random noise\n";
 }
