@@ -4,6 +4,14 @@
 
 int main()
 {
+    {
+        Cat basic;
+        {
+        Cat tmp = basic;
+        }
+    }
+
+    std::cout << std::endl;
     Animal *arr[4];
     for(int i = 0; i < 2; i++)
         arr[i] = new Dog();

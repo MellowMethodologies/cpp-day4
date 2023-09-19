@@ -9,8 +9,12 @@ Dog:: Dog()
 
 Dog &Dog::operator=(const Dog &a)
 {
-    this->type = a.type;
-    
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     std::cout << "(Dog)" << "assignement operator"<< std::endl;
     return *this;
 }

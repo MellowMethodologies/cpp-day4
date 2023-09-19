@@ -9,14 +9,24 @@ Dog:: Dog()
 
 Dog &Dog::operator=(const Dog &a)
 {
-    this->type = a.type;
-    
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     std::cout << "(Dog)" << "assignement operator"<< std::endl;
     return *this;
 }
 
 Dog::Dog(const Dog &a)
 {
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     std::cout << "(Dog)" << "copy constructor"<< std::endl;
     *this = a;
 }

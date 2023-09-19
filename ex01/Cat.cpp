@@ -8,15 +8,24 @@ Cat::Cat()
 
 Cat &Cat::operator=(const Cat &a)
 {
-    setType(a.type);
-    delete br;
-    br = new Brain(*(a.br));
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     std::cout << "(Cat)" << "assignement operator"<< std::endl;
     return *this;
 }
 
 Cat::Cat(const Cat &a)
 {
+    if (a.br)
+    {
+        setType(a.type);
+        delete br;
+        br = new Brain(*(a.br));
+    }
     std::cout << "(Cat)" << "copy constructor"<< std::endl;
     *this = a;
 }
