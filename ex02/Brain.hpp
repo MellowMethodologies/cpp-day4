@@ -17,7 +17,7 @@ class Brain
         Brain& operator=( const Brain& src );
 
     private:
-        std::string idea[100];
+        std::string ideas[100];
 };
 
 #endif

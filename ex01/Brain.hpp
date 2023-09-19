@@ -16,7 +16,7 @@ class Brain
         ~Brain();
         Brain& operator=( const Brain& src );
     protected:
-        std::string idea[100];
+        std::string ideas[100];
 };
 
 #endif

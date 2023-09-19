@@ -19,7 +19,7 @@ Ice& Ice ::operator=(Ice const &a)
     return *this;
 }
 
-Ice* Ice::clone() const { return (new Ice()); }
+AMateria* Ice::clone() const { return (new Ice()); }
 
 void Ice:: use(ICharacter &target)
 {

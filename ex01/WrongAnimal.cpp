@@ -33,7 +33,7 @@ WrongAnimal::~WrongAnimal()
     std::cout << "(WrongAnimal)" << "destructor"<< std::endl;
 }
 
-void WrongAnimal::makeSound()
+void WrongAnimal::makeSound() const
 {
     std::cout<< "random noise\n";
 }

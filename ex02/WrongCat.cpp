@@ -24,7 +24,7 @@ WrongCat::~WrongCat()
     std::cout << "(WrongCat)" << "destructor"<< std::endl;
 }
 
-void WrongCat::makeSound()
+void WrongCat::makeSound() const
 {
     std::cout<< "Meow\n";
 }

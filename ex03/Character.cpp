@@ -3,10 +3,7 @@
 
 class ICharacter;
 
-
-std::string const &Character:: getName() const {
-    return this->name;
-}
+std::string const &Character:: getName() const {return this->name;}
 
 void Character:: equip(AMateria* m)
 {
@@ -20,8 +17,10 @@ void Character:: equip(AMateria* m)
     }
 }
 
-void Character:: unequip(int idx) {
-    (idx < 4 && idx >= 0) ? T[idx] = NULL : 0;
+void Character:: unequip(int idx)
+{
+    if(idx < 4 && idx >= 0)
+        T[idx] = NULL;
 }
 
 void Character:: use(int idx, ICharacter& target){
@@ -43,21 +42,18 @@ Character &Character::operator=(Character const &t) {
 
 Character::Character () {}
 
-Character::Character (std::string _name):name(_name)  {
-    for (int i=0;i < 4;i++)
+Character::Character (std::string _name) : name(_name)
+{
+    for (int i=0; i < 4; i++)
         T[i] = NULL;
 }
 
-Character::Character(Character const &t) {
-    this->name = t.name;
-    for (int i = 0; i < 4; i++)
-        this->T[i] = t.T[i];
-}
+Character::Character(Character const &t) {*this = t;}
 
-Character::~Character () {
+Character::~Character ()
+{
     for(int i = 0; i < 4; i++)
-        if (T[i])
-            delete(T[i]);
+        delete(T[i]);
 }
 
 /*  -------------------------------  */

@@ -1,23 +1,27 @@
 #include "MateriaSource.hpp"
 
 MateriaSource ::~MateriaSource() {
+    for (int i = 0; i < 4; i++)
+        delete MAT[i];
+}
+
+MateriaSource ::MateriaSource()
+{
     for (int i=0; i < 4;i++)
-        if (MAT[i])
-            delete MAT[i];
+        MAT[i] = NULL;
 }
 
-MateriaSource ::MateriaSource() {
-      for (int i=0; i < 4;i++)
-            MAT[i] = NULL;
-}
-
-MateriaSource ::MateriaSource(MateriaSource const &m) {
-    *this = m;
-}
+MateriaSource ::MateriaSource(MateriaSource const &m) {*this = m;}
 
 MateriaSource &MateriaSource ::operator=(MateriaSource const &m) {
-    for (int i = 0; i < 4; i++)
-        this->MAT[i] = m.MAT[i];
+    if (this != &m)
+    {
+        for (int i =0; this->MAT[i]; i++)
+        {
+            delete MAT[i];
+            MAT[i] = m.MAT[i]->clone();
+        }
+    }
     return *this;
 }
 

@@ -20,14 +20,8 @@ Cat &Cat::operator=(const Cat &a)
 
 Cat::Cat(const Cat &a)
 {
-    if (a.br)
-    {
-        setType(a.type);
-        delete br;
-        br = new Brain(*(a.br));
-    }
-    std::cout << "(Cat)" << "copy constructor"<< std::endl;
     *this = a;
+    std::cout << "(Cat)" << "copy constructor"<< std::endl;
 }
 
 Cat::~Cat()

@@ -14,7 +14,7 @@ Cure& Cure ::operator=(Cure const &a)
     return *this;
 }
 
-Cure* Cure:: clone() const {return (new Cure());}
+AMateria* Cure:: clone() const {return (new Cure());}
 
 void Cure::use(ICharacter &target)
 {
