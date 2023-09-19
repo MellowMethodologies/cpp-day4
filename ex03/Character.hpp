@@ -9,6 +9,7 @@ class Character:  public ICharacter
     private:
         std::string name;
         AMateria *T[4];
+        AMateria *T_GC[4];
     public:
         Character &operator=(Character const &t);
         Character ();
